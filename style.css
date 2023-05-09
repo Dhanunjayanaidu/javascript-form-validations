@@ -1,0 +1,9 @@
+#javascriptFormValidations .form-control:focus {
+    outline: 0px;
+}
+#javascriptFormValidations .form-control.success {
+    border-color: #09c372;
+}
+#javascriptFormValidations .form-control.error {
+    border-color: #ff3860;
+}
