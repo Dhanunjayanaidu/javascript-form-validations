@@ -1,39 +1,53 @@
-const javascriptFormValidations = document.getElementById(
-  "javascriptFormValidations"
-);
-const userName = document.getElementById("userName");
-const last_name = document.getElementById("lastName");
-const emailId = document.getElementById("emailId");
-const PasswordId = document.getElementById("PasswordId");
-const PasswordIdTwo = document.getElementById("PasswordIdTwo");
-const mobileId = document.getElementById("mobileId");
-const yourBiodata = document.getElementById("yourBiodata");
+// const javascriptFormValidations = document.getElementById(
+//   "javascriptFormValidations"
+// );
+// const userName = document.getElementById("userName");
+// const last_name = document.getElementById("lastName");
+// const emailId = document.getElementById("emailId");
+// const PasswordId = document.getElementById("PasswordId");
+// const PasswordIdTwo = document.getElementById("PasswordIdTwo");
+// const mobileId = document.getElementById("mobileId");
+// const yourBiodata = document.getElementById("yourBiodata");
 
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
+// const setError = (element, message) => {
+//   const inputControl = element.parentElement;
+//   const errorDisplay = inputControl.querySelector(".error");
 
-  errorDisplay.innerText = message;
-  inputControl.classList.add("error");
-  inputControl.classList.remove("success");
-};
+//   errorDisplay.innerText = message;
+//   inputControl.classList.add("error");
+//   inputControl.classList.remove("success");
+// };
 
-javascriptFormValidations.addEventListener("formSubmit", (e) => {
-  e.preventDefault();
+// javascriptFormValidations.addEventListener("formSubmit", (e) => {
+//   e.preventDefault();
 
-  validateInputs();
-});
+//   validateInputs();
+// });
 
-const validateInputs = () => {
-  const userNameValue = userName.value.trim();
-  const emailIdValue = emailId.value.trim();
-  const PasswordId = passwordId.value.trim();
-  const PasswordIdTwo = passwordIdTwo.value.trim();
-  const mobileIdValue = mobileId.value.trim();
-  const yourBiodata = yourBiodata.value.trim();
+// const validateInputs = () => {
+//   const userNameValue = userName.value.trim();
+//   const emailIdValue = emailId.value.trim();
+//   const PasswordId = passwordId.value.trim();
+//   const PasswordIdTwo = passwordIdTwo.value.trim();
+//   const mobileIdValue = mobileId.value.trim();
+//   const yourBiodata = yourBiodata.value.trim();
 
-  if (userNameValue === "") {
-    setError(userName, "User name is required");
+//   if (userNameValue === "") {
+//     setError(userName, "User name is required");
+//   } else {
+//   }
+// };
+
+function validate() {
+  var mobileIdString = document.getElementById("mobileId").value;
+  var mobileIdInput = document.getElementById("mobileId");
+
+  var mobileIdPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  if (mobileIdPattern.test(mobileIdString)) {
+    mobileIdInput.style.border = "1px solid green";
+    alert("Done");
+    return true;
   } else {
+    mobileIdInput.style.border = "1px solid red";
   }
-};
+}
